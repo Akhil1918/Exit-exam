@@ -3,6 +3,7 @@ import axios from 'axios';
 import FeedbackCards from '../components/FeedbackCards';
 import { Box, CircularProgress, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
 
 const Dashboard = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -43,7 +44,11 @@ const Dashboard = () => {
   if (error) return <Typography color="error">{error}</Typography>;
 
   return (
-    <Box sx={{ minHeight: '100vh' }}>
+    <Box sx={{ 
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+      padding: '2rem 0'
+    }}>
       <FeedbackCards 
         feedbacks={feedbacks} 
         handleEdit={handleEdit}
